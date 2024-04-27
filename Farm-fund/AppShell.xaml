@@ -4,12 +4,35 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Farm_fund"
+    xmlns:views="clr-namespace:Farm_fund.views"
     Shell.FlyoutBehavior="Disabled"
     Title="Farm_fund">
+    <TabBar>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        <!-- My Farm Tab -->
+        <Tab Title="My Farm">
+            <ShellContent Title="My Farm"
+                      Icon="farm.png">
+                <views:MyFarmPage />
+            </ShellContent>
+        </Tab>
+
+        <!-- My Investments Tab -->
+        <Tab Title="My Investments">
+            <ShellContent Title="My Investments"
+                      Icon="investments.png">
+                <views:MyInvestmentsPage />
+            </ShellContent>
+        </Tab>
+
+        <!-- Market Tab -->
+        <Tab Title="Market">
+            <ShellContent Title="Market"
+                      Icon="market.png">
+                <views:MarketPage />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+
 
 </Shell>
