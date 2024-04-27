@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace Farm_fund
 {
@@ -18,6 +19,15 @@ namespace Farm_fund
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+
+
+            builder
+                .UseMauiApp<App>()
+                .ConfigureSyncfusionCore();
+
+
+        
 
             return builder.Build();
         }

@@ -12,8 +12,12 @@
         <!-- My Farm Tab -->
         <Tab Title="My Farm">
             <ShellContent Title="My Farm"
-                      Icon="farm.png">
+                      Icon="dotnet_bot.png">
                 <views:MyFarmPage />
+            </ShellContent>
+            <ShellContent Title="Ask me Questions!"
+           Icon="farm.png">
+                <views:ChatPageFarm />
             </ShellContent>
         </Tab>
 
@@ -23,6 +27,10 @@
                       Icon="investments.png">
                 <views:MyInvestmentsPage />
             </ShellContent>
+            <ShellContent Title="Ask me Questions!"
+Icon="farm.png">
+                <views:MyFarmPage />
+            </ShellContent>
         </Tab>
 
         <!-- Market Tab -->
@@ -30,6 +38,10 @@
             <ShellContent Title="Market"
                       Icon="market.png">
                 <views:MarketPage />
+            </ShellContent>
+            <ShellContent Title="Ask me Questions!"
+Icon="farm.png">
+                <views:MyFarmPage />
             </ShellContent>
         </Tab>
     </TabBar>
