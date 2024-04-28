@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Farm_fund.views.MarketChatPage"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Chat;assembly=Syncfusion.Maui.Chat"
+             xmlns:local="clr-namespace:Farm_fund.ViewModels"
+             xmlns:st="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
+             Title="MarketChatPage">
+    <ContentPage.BindingContext>
+        <local:MarketChatViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <st:SyncfusionThemeDictionary>
+            <st:SyncfusionThemeDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <x:String x:Key="SfChatTheme">Custom Theme</x:String>
+                    <Color x:Key="SfChatBackgroundColor">#0A1D25</Color>
+                    <Color x:Key="SfChatIncomingMessageBackground">#202C33</Color>
+                    <Color x:Key="SfChatOutgoingMessageBackground">#005C4B</Color>
+                    <Color x:Key="SfChatIncomingMessageTextColor">#FFFFFF</Color>
+                    <Color x:Key="SfChatOutgoingMessageTextColor">#FFFFFF</Color>
+                </ResourceDictionary>
+            </st:SyncfusionThemeDictionary.MergedDictionaries>
+        </st:SyncfusionThemeDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+        <Label 
+  Text="Chat with us"
+  VerticalOptions="Center" 
+  HorizontalOptions="Center" />
+        <sf:SfChat x:Name="farmPageChat"
+    Messages="{Binding Messages}"
+    CurrentUser="{Binding CurrentUser}"
+    ShowTimeBreak="True"
+    SendMessage="farmPageChat_SendMessage"
+    ShowAttachmentButton="True"
+    AttachmentButtonClicked="farmPageChat_AttachmentButtonClicked">
+        </sf:SfChat>
+    </VerticalStackLayout>
+
+</ContentPage>

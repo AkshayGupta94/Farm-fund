@@ -8,10 +8,13 @@
     <DefaultDevice>pixel_5_-_api_31</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="views\ChatPageFarm.xaml">
+    <MauiXaml Update="views\FarmListPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="views\InvestmentChatPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="views\MarketChatPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="views\MarketPage.xaml">
