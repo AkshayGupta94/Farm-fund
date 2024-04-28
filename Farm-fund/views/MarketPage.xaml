@@ -3,6 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Farm_fund.views.MarketPage"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Chat;assembly=Syncfusion.Maui.Chat"
+             xmlns:local="clr-namespace:Farm_fund.ViewModels"
              Title="MarketPage">
-    <sf:SfChat></sf:SfChat>
+    <ContentPage.BindingContext>
+        <local:MarketPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ListView HasUnevenRows="True" ItemsSource="{Binding MarketData}"
+        ItemSelected="ListView_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2"
+                     Source="{Binding ImageUrl}"
+                     Aspect="AspectFill"
+                     HeightRequest="60"
+                     WidthRequest="60" 
+                     Margin="5"/>
+                        <Label Grid.Column="1"
+                     Text="{Binding Name}"
+                     FontAttributes="Bold" />
+                        <Label Grid.Row="1"
+                     Grid.Column="1"
+                     Text="{Binding Details}"
+                     VerticalOptions="End" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>

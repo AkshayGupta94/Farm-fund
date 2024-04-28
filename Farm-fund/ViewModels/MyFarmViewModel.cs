@@ -19,7 +19,7 @@ namespace Farm_fund.ViewModels
 
         public MyFarmViewModel()
         {
-            _currentUser = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" };
+            _currentUser = new Author() { Name = "Margaret"};
             _messages = new ObservableCollection<object>();
             GenerateMessages();
         }   
@@ -67,24 +67,24 @@ namespace Farm_fund.ViewModels
         {
             this._messages.Add(new TextMessage()
             {
-                Author = CurrentUser,
+                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
                 Text = "Hello, I am Field Mate, how can I help you today?",
             });
 
             this._messages.Add(new TextMessage()
             {
-                Author = new Author() { Name = "Margaret", Avatar = "farmfund_bot.png" },
+                Author = _currentUser,
                 Text = "How is my farm yield?",
             });
 
             this._messages.Add(new TextMessage()
             {
-                Author = CurrentUser,
+                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
                 Text = "The farm yeild is very impressive, you can expect good output. Here is the most recent picture of your farm",
             });
             this._messages.Add(new ImageMessage()
             {
-                Author = CurrentUser,
+                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
                 Source = "farm.jpg",
             });
         }

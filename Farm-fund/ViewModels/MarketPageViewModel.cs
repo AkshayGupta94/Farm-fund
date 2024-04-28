@@ -1,5 +1,4 @@
 ﻿using Farm_fund.DataModels;
-using Syncfusion.Maui.Chat;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,51 +9,48 @@ using System.Threading.Tasks;
 
 namespace Farm_fund.ViewModels
 {
-    public class MyInvestmentViewModel : INotifyPropertyChanged
+    public class MarketPageViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<InvestmentModel> _investmentData;
+        private ObservableCollection<MarketDataModel> _marketData;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MyInvestmentViewModel()
+        public MarketPageViewModel()
         {
-            _investmentData = new ObservableCollection<InvestmentModel>();
+            _marketData = new ObservableCollection<MarketDataModel>();
             GenerateData();
         }
 
         private void GenerateData()
         {
-            _investmentData.Add(new InvestmentModel()
+            _marketData.Add(new MarketDataModel()
             {
                 Name = "Farm 1",
-                Cost = "$100,000",
-                Details = "Growth is progressing as expected",
+                Details = "Sugar Cane farm available for investment",
                 ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
             });
 
-            _investmentData.Add(new InvestmentModel()
+            _marketData.Add(new MarketDataModel()
             {
                 Name = "Farm 2",
-                Cost = "$200,000",
-                Details = "Bumper yield is expected",
+                Details = "Potato farm available for investment",
                 ImageUrl = "https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg"
             });
 
-            _investmentData.Add(new InvestmentModel()
+            _marketData.Add(new MarketDataModel()
             {
                 Name = "Farm 3",
-                Cost = "$300,000",
-                Details = "Farm is going through pest attack",
+                Details = "Wheat farm available for investment",
                 ImageUrl = "https://www.shutterstock.com/image-photo/germany-bavaria-vast-barley-field-600nw-2245723651.jpg"
             });
         }
 
-        public ObservableCollection<InvestmentModel> InvestmentData
+        public ObservableCollection<MarketDataModel> MarketData
         {
-            get { return _investmentData; }
+            get { return _marketData; }
             set
             {
-                _investmentData = value;
+                _marketData = value;
             }
         }
         public void RaisePropertyChanged(string propName)
@@ -68,8 +64,8 @@ namespace Farm_fund.ViewModels
 
         internal void HandleSendMessage(object sender, SelectedItemChangedEventArgs e)
         {
-           InvestmentModel investment = e.SelectedItem as InvestmentModel;
-            if (investment != null)
+            MarketDataModel marketData = e.SelectedItem as MarketDataModel;
+            if (marketData != null)
             {
                 //Handle the selected item
             }

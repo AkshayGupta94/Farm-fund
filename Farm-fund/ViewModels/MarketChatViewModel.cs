@@ -6,15 +6,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Java.Util.Jar.Attributes;
 
 namespace Farm_fund.ViewModels
 {
-    public class InvestmentChatPageViewModel : INotifyPropertyChanged
+    public class MarketChatViewModel
     {
-        public InvestmentChatPageViewModel()
+        public MarketChatViewModel()
         {
-            _currentUser = new Author() { Name = "Margaret"};
+            _currentUser = new Author() { Name = "Margaret" };
             _messages = new ObservableCollection<object>();
             GenerateMessages();
         }
@@ -75,13 +74,13 @@ namespace Farm_fund.ViewModels
             this._messages.Add(new TextMessage()
             {
                 Author = CurrentUser,
-                Text = "How is my investment in farm 1 going?",
+                Text = "Should i invest in wheat farm?",
             });
 
             this._messages.Add(new TextMessage()
             {
                 Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
-                Text = "The farm 1 yeild is very impressive, you can expect good returns in 2 months. Here is the most recent picture of your farm",
+                Text = "The wheat yield is expected to be above average this year. You should invest it. This is a yield from last year",
             });
             this._messages.Add(new ImageMessage()
             {
@@ -89,6 +88,6 @@ namespace Farm_fund.ViewModels
                 Source = "farm.jpg",
             });
         }
-    }
 
+    }
 }

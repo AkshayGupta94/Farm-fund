@@ -81,10 +81,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="views\ChatPageFarm.xaml">
+	  <MauiXaml Update="views\FarmListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="views\InvestmentChatPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="views\MarketChatPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="views\MarketPage.xaml">
