@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Farm_fund.views.MyFarmPage"
+             x:Class="Farm_fund.views.InvestmentChatPage"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Chat;assembly=Syncfusion.Maui.Chat"
              xmlns:local="clr-namespace:Farm_fund.ViewModels"
              xmlns:st="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
-             Title="MyFarmPage">
-
+             Title="InvestmentChatPage">
+    
     <ContentPage.BindingContext>
-        <local:MyFarmViewModel/>
+        <local:InvestmentChatPageViewModel/>
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
@@ -28,18 +28,17 @@
 
     <VerticalStackLayout>
         <Label 
-         Text="Chat with us"
-         VerticalOptions="Center" 
-         HorizontalOptions="Center" />
+      Text="Chat with us"
+      VerticalOptions="Center" 
+      HorizontalOptions="Center" />
         <sf:SfChat x:Name="farmPageChat"
-           Messages="{Binding Messages}"
-           CurrentUser="{Binding CurrentUser}"
-           ShowTimeBreak="True"
-           SendMessage="farmPageChat_SendMessage"
-           ShowAttachmentButton="True"
-           AttachmentButtonClicked="farmPageChat_AttachmentButtonClicked">
+        Messages="{Binding Messages}"
+        CurrentUser="{Binding CurrentUser}"
+        ShowTimeBreak="True"
+        SendMessage="farmPageChat_SendMessage"
+        ShowAttachmentButton="True"
+        AttachmentButtonClicked="farmPageChat_AttachmentButtonClicked">
         </sf:SfChat>
     </VerticalStackLayout>
-
 
 </ContentPage>

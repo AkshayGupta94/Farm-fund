@@ -84,6 +84,9 @@
 	  <MauiXaml Update="views\ChatPageFarm.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="views\InvestmentChatPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="views\MarketPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

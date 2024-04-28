@@ -11,6 +11,9 @@
     <MauiXaml Update="views\ChatPageFarm.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="views\InvestmentChatPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="views\MarketPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

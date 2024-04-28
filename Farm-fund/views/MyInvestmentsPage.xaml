@@ -4,5 +4,6 @@
              x:Class="Farm_fund.views.MyInvestmentsPage"
              xmlns:sf="clr-namespace:Syncfusion.Maui.Chat;assembly=Syncfusion.Maui.Chat"
              Title="MyInvestmentsPage">
-    <sf:SfChat></sf:SfChat>
+   
+        
 </ContentPage>

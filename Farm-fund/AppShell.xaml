@@ -13,11 +13,11 @@
         <Tab Title="My Farm">
             <ShellContent Title="My Farm"
                       Icon="dotnet_bot.png">
-                <views:MyFarmPage />
+                <views:ChatPageFarm/>
             </ShellContent>
             <ShellContent Title="Ask me Questions!"
            Icon="farm.png">
-                <views:ChatPageFarm />
+                <views:MyFarmPage/>
             </ShellContent>
         </Tab>
 
@@ -29,7 +29,7 @@
             </ShellContent>
             <ShellContent Title="Ask me Questions!"
 Icon="farm.png">
-                <views:MyFarmPage />
+                <views:InvestmentChatPage />
             </ShellContent>
         </Tab>
 
