@@ -25,23 +25,14 @@ namespace Farm_fund.ViewModels
         {
             _marketData.Add(new MarketDataModel()
             {
-                Name = "Farm 1",
-                Details = "Sugar Cane farm available for investment",
+                Name = "Smith Family Farm Illinois",
                 ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
             });
 
             _marketData.Add(new MarketDataModel()
             {
-                Name = "Farm 2",
-                Details = "Potato farm available for investment",
+                Name = "Cute Potato Idaho",
                 ImageUrl = "https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg"
-            });
-
-            _marketData.Add(new MarketDataModel()
-            {
-                Name = "Farm 3",
-                Details = "Wheat farm available for investment",
-                ImageUrl = "https://www.shutterstock.com/image-photo/germany-bavaria-vast-barley-field-600nw-2245723651.jpg"
             });
         }
 
@@ -69,6 +60,11 @@ namespace Farm_fund.ViewModels
             {
                 //Handle the selected item
             }
+        }
+        public void HandleButtonClick(object sender, EventArgs e)
+        {
+            var a = sender as Button;
+            var b = a.BindingContext as MarketDataModel;
         }
     }
 }

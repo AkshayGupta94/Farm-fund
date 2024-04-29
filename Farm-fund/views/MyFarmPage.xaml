@@ -26,20 +26,22 @@
         </st:SyncfusionThemeDictionary>
     </ContentPage.Resources>
 
-    <VerticalStackLayout>
-        <Label 
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
          Text="Chat with us"
          VerticalOptions="Center" 
          HorizontalOptions="Center" />
-        <sf:SfChat x:Name="farmPageChat"
+            <sf:SfChat x:Name="farmPageChat"
            Messages="{Binding Messages}"
            CurrentUser="{Binding CurrentUser}"
            ShowTimeBreak="True"
            SendMessage="farmPageChat_SendMessage"
            ShowAttachmentButton="True"
-           AttachmentButtonClicked="farmPageChat_AttachmentButtonClicked">
-        </sf:SfChat>
-    </VerticalStackLayout>
-
+           AttachmentButtonClicked="farmPageChat_AttachmentButtonClicked"
+           CanAutoScrollToBottom="True">
+            </sf:SfChat>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

@@ -9,11 +9,21 @@ public partial class FarmListPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    //private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    //{
+    //    if (BindingContext is FarmListPageViewModel viewModel)
+    //    {
+    //        viewModel.HandleSendMessage(sender, e);
+    //        (sender as ListView).SelectedItem = null;
+    //    }
+    //}
+
+    private void Button_Clicked(object sender, EventArgs e)
     {
-        if (BindingContext is FarmListPageViewModel viewModel)
-        {
-            viewModel.HandleSendMessage(sender, e);
-        }
+        Navigation.PushAsync(new FarmDetailPage());
+        //if (BindingContext is FarmListPageViewModel viewModel)
+        //{
+        //    viewModel.HandleButtonClick(sender, e);
+        //}
     }
 }

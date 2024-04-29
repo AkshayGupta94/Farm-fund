@@ -59,6 +59,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\farm.jpg" />
 	  <None Remove="Resources\Images\farmfund_bot.png" />
+	  <None Remove="Resources\Images\farm_icon.png" />
+	  <None Remove="Resources\Images\investments.png" />
+	  <None Remove="Resources\Images\market.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +84,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="views\FarmDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="views\FarmListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -88,6 +94,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="views\MarketChatPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="views\MarketDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="views\MarketPage.xaml">

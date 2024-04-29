@@ -10,37 +10,37 @@
     <TabBar>
 
         <!-- My Farm Tab -->
-        <Tab Title="My Farm">
+        <Tab Title="My Farm" Icon="farm_icon.png">
             <ShellContent Title="My Farm"
-                      Icon="dotnet_bot.png">
+                      Icon="farm_icon.png">
                 <views:FarmListPage/>
             </ShellContent>
             <ShellContent Title="Ask me Questions!"
-           Icon="farm.png">
+           Icon="farm_icon.png">
                 <views:MyFarmPage/>
             </ShellContent>
         </Tab>
 
         <!-- My Investments Tab -->
-        <Tab Title="My Investments">
+        <Tab Title="My Investments" Icon="investments.png">
             <ShellContent Title="My Investments"
-                      Icon="investments.png">
+                      Icon="investments.jpg">
                 <views:MyInvestmentsPage />
             </ShellContent>
             <ShellContent Title="Ask me Questions!"
-                            Icon="farm.png">
+                            Icon="farm_icon.png">
                 <views:InvestmentChatPage />
             </ShellContent>
         </Tab>
 
         <!-- Market Tab -->
-        <Tab Title="Market">
+        <Tab Title="Market" Icon="market.png">
             <ShellContent Title="Market"
                       Icon="market.png">
                 <views:MarketPage />
             </ShellContent>
             <ShellContent Title="Ask me Questions!"
-Icon="farm.png">
+Icon="farm_icon.png">
                 <views:MarketChatPage />
             </ShellContent>
         </Tab>

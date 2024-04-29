@@ -6,7 +6,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Java.Util.Jar.Attributes;
 
 namespace Farm_fund.ViewModels
 {

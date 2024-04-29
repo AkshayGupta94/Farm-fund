@@ -74,5 +74,10 @@ namespace Farm_fund.ViewModels
                 //Handle the selected item
             }
         }
+        public void HandleButtonClick(object sender, EventArgs e)
+        {
+            var a = sender as Button;
+            var b = a.BindingContext as InvestmentModel;
+        }
     }
 }

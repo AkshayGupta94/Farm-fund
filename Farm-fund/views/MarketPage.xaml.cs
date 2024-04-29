@@ -9,12 +9,12 @@ public partial class MarketPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private void Button_Clicked(object sender, EventArgs e)
     {
-		if (BindingContext is MarketPageViewModel viewModel)
-		{
-            viewModel.HandleSendMessage(sender, e);
-        }
-
+        Navigation.PushAsync(new MarketDetailPage());
+        //if (BindingContext is MarketPageViewModel viewModel)
+        //{
+        //    viewModel.HandleButtonClick(sender, e);
+        //}
     }
 }

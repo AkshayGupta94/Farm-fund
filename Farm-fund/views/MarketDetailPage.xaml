@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Farm_fund.views.MarketDetailPage"
+             Title="MarketDetailPage">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <!-- Large Image Placeholder -->
+            <Frame HeightRequest="200" WidthRequest="200" HorizontalOptions="Center" CornerRadius="10">
+                <Image Source="https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg" Aspect="AspectFill"/>
+            </Frame>
+
+            <!-- Heading -->
+            <Label Text="Smith Family Farm Illinois" 
+                   FontAttributes="Bold" 
+                   FontSize="Title"
+                   HorizontalOptions="Center" />
+
+            <!-- Description -->
+            <Label Text="Sugar Cane farm available for investment" 
+                   FontSize="Body"
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- Additional Details Here -->
+            <Label Text="400 acres of sugar cane farm is available for investment. Last year this farm gave 120% output." 
+                   FontSize="Body"
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- Action Button -->
+            <Button Text="Perform Action" 
+                    HorizontalOptions="FillAndExpand" 
+                    Margin="0,5" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

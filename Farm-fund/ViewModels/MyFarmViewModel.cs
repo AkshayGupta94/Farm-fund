@@ -85,7 +85,7 @@ namespace Farm_fund.ViewModels
             this._messages.Add(new ImageMessage()
             {
                 Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
-                Source = "farm.jpg",
+                Source = "https://www.timeforkids.com/wp-content/uploads/2019/02/190222015997.jpg",
             });
         }
 

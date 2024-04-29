@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Farm_fund.views.FarmDetailPage"
+             Title="FarmDetailPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Frame HeightRequest="300" CornerRadius="20" Margin="0">
+                <Image Source="https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg" Aspect="AspectFill"/>
+            </Frame>
+
+            <!-- Title and Subtitle -->
+            <StackLayout Spacing="0">
+                <Label Text="Grow Farms Iowa" 
+                       FontSize="Title" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Start"/>
+                <Label Text="Weed growth is visible in farm" 
+                       FontSize="Subtitle"
+                       HorizontalOptions="Start"/>
+            </StackLayout>
+
+            <!-- Segmented Control for multiple details -->
+            <Border BackgroundColor="#F0F0F0" Padding="5">
+                <HorizontalStackLayout Spacing="5" HorizontalOptions="Center">
+                    <Button Text="Overview" HorizontalOptions="FillAndExpand" />
+                    <Button Text="Specifications" HorizontalOptions="FillAndExpand" />
+                    <Button Text="Reviews" HorizontalOptions="FillAndExpand" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <!-- Action Button -->
+            <Button Text="Take Action" 
+                    BackgroundColor="Blue" 
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50" 
+                    HorizontalOptions="FillAndExpand" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

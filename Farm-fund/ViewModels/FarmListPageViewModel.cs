@@ -25,23 +25,14 @@ namespace Farm_fund.ViewModels
         {
             _farmData.Add(new FarmDataModel()
             {
-                Name = "Farm 1",
-                Details = "Farm Is infected with pest.",
+                Name = "Happy Farms Pennsylvania",
                 ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
             });
 
             _farmData.Add(new FarmDataModel()
             {
-                Name = "Farm 2",
-                Details = "Weed growth is visible in farm",
+                Name = "Grow Farms Iowa",
                 ImageUrl = "https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg"
-            });
-
-            _farmData.Add(new FarmDataModel()
-            {
-                Name = "Farm 3",
-                Details = "Crops are growing as predicted",
-                ImageUrl = "https://www.shutterstock.com/image-photo/germany-bavaria-vast-barley-field-600nw-2245723651.jpg"
             });
         }
 
@@ -62,13 +53,18 @@ namespace Farm_fund.ViewModels
 
         }
 
-        internal void HandleSendMessage(object sender, SelectedItemChangedEventArgs e)
+        internal void HandleSendMessage(object sender, SelectionChangedEventArgs e)
         {
-            FarmDataModel investment = e.SelectedItem as FarmDataModel;
+            FarmDataModel investment = e.CurrentSelection as FarmDataModel;
             if (investment != null)
             {
                 //Handle the selected item
             }
+        }
+        public void HandleButtonClick(object sender, EventArgs e)
+        {
+            var a = sender as Button;
+            var b = a.BindingContext as FarmDataModel;
         }
     }
 }
