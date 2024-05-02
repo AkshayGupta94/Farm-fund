@@ -20,9 +20,10 @@ public partial class MyInvestmentsPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-        if (BindingContext is MyInvestmentViewModel viewModel)
-        {
-            viewModel.HandleButtonClick(sender, e);
-        }
+        Navigation.PushAsync(new InvestmentDetailPage());
+        //if (BindingContext is MyInvestmentViewModel viewModel)
+        //{
+        //    viewModel.HandleButtonClick(sender, e);
+        //}
     }
 }
