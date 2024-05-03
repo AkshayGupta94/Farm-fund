@@ -4,18 +4,18 @@
              x:Class="Farm_fund.views.InvestmentDetailPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              xmlns:local="clr-namespace:Farm_fund.views"
-             Title="InvestmentDetailPage"
+             Title="Wills Farm"
              BackgroundColor="#F5F5F5">
     
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
             <!-- Large Image Placeholder -->
             <Frame CornerRadius="10" Padding="0" HasShadow="True">
-                <Image Source="https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg" Aspect="AspectFill" HeightRequest="200"/>
+                <Image Source="https://t3.ftcdn.net/jpg/06/78/40/56/360_F_678405631_4HnZqPCkL0C7g7thhp3GMJALIwAMmVMi.jpg" Aspect="AspectFill" HeightRequest="200"/>
             </Frame>
 
             <!-- Heading -->
-            <Label Text="Smith Family Farm Illinois" 
+            <Label Text="Wills Wheat Farm Kansas" 
                 FontSize="24"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
@@ -37,27 +37,27 @@
                 </syncfusion:SfCartesianChart.XAxes>
 
                 <syncfusion:SfCartesianChart.YAxes>
-                    <syncfusion:NumericalAxis />
+                    <syncfusion:NumericalAxis/>
                 </syncfusion:SfCartesianChart.YAxes>
 
                 <syncfusion:SfCartesianChart.Series>
-                    <syncfusion:AreaSeries ItemsSource="{Binding InvestmentChartData}"
+                    <syncfusion:LineSeries ItemsSource="{Binding InvestmentChartData}"
                                          XBindingPath="Month"
                                          YBindingPath="Value"
-                                         StrokeWidth="2" 
+                                         StrokeWidth="2"
                                         Fill="#6200EE"/>
                 </syncfusion:SfCartesianChart.Series>
             </syncfusion:SfCartesianChart>
 
             <!-- Additional Details Here -->
-            <Label Text="This graph shows the annual performance trends over the years.400 acres of sugar cane farm is available for investment. Last year this farm gave 120% output." 
+            <Label Text="This graph shows the crop height (in cm) for each month. Farm yield is steadily progressing as anticipated." 
                 FontSize="14"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
-                TextColor="#616161"/>
+                TextColor="Black"/>
 
             <!-- Action Button -->
-            <Button Text="Start Investing" 
+            <Button Text="Invest More" 
                 BackgroundColor="#6200EE"
                  TextColor="White"
                  CornerRadius="20"

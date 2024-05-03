@@ -26,13 +26,13 @@ namespace Farm_fund.ViewModels
             _marketData.Add(new MarketDataModel()
             {
                 Name = "Smith Family Farm Illinois",
-                ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
+                ImageUrl = "https://www.fb.org/imgz/Commodities/SpecialtyCrops/NCFB_MarkStebnicki_LettuceField_feat.jpg"
             });
 
             _marketData.Add(new MarketDataModel()
             {
                 Name = "Cute Potato Idaho",
-                ImageUrl = "https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg"
+                ImageUrl = "https://eu-images.contentstack.com/v3/assets/bltdd43779342bd9107/blt85aaaabbcba95bfa/638f395a2fee5b0fa0f05f51/0228F1-1815A-1540x800.jpg"
             });
         }
 

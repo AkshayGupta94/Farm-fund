@@ -26,26 +26,10 @@ namespace Farm_fund.ViewModels
         {
             _investmentData.Add(new InvestmentModel()
             {
-                Name = "Farm 1",
+                Name = "Wills Wheat Farm Kansas",
                 Cost = "$100,000",
-                Details = "Growth is progressing as expected",
-                ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
-            });
-
-            _investmentData.Add(new InvestmentModel()
-            {
-                Name = "Farm 2",
-                Cost = "$200,000",
-                Details = "Bumper yield is expected",
-                ImageUrl = "https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg"
-            });
-
-            _investmentData.Add(new InvestmentModel()
-            {
-                Name = "Farm 3",
-                Cost = "$300,000",
-                Details = "Farm is going through pest attack",
-                ImageUrl = "https://www.shutterstock.com/image-photo/germany-bavaria-vast-barley-field-600nw-2245723651.jpg"
+                Details = "The farm yield is on track with our projections",
+                ImageUrl = "https://t3.ftcdn.net/jpg/06/78/40/56/360_F_678405631_4HnZqPCkL0C7g7thhp3GMJALIwAMmVMi.jpg"
             });
         }
 

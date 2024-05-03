@@ -20,7 +20,6 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -32,8 +31,7 @@
                             <Image Source="{Binding ImageUrl}" Aspect="AspectFill"/>
                         </Frame>
                         <Label Grid.Row="1" Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" VerticalOptions="End" Margin="0,5,0,0"/>
-                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Details}" VerticalOptions="Start" Margin="0,0,0,5" Padding="0,0,0,5"/>
-                        <Button Grid.Row="3" Grid.Column="1" Text="See Details" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,5" BackgroundColor="#7E007B"
+                        <Button Grid.Row="2" Grid.Column="1" Text="See Details" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,5" BackgroundColor="#7E007B"
                                 Clicked="Button_Clicked"/>
                     </Grid>
                 </Frame>

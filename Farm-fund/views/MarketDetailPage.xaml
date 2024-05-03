@@ -4,14 +4,14 @@
              x:Class="Farm_fund.views.MarketDetailPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              xmlns:local="clr-namespace:Farm_fund.views"
-             Title="MarketDetailPage"
+             Title="Smith Family Farm"
              BackgroundColor="#F5F5F5">
     
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
             <!-- Large Image Placeholder -->
             <Frame CornerRadius="10" Padding="0" HasShadow="True">
-                <Image Source="https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg" Aspect="AspectFill" HeightRequest="200"/>
+                <Image Source="https://www.fb.org/imgz/Commodities/SpecialtyCrops/NCFB_MarkStebnicki_LettuceField_feat.jpg" Aspect="AspectFill" HeightRequest="200"/>
             </Frame>
 
             <!-- Heading -->
@@ -49,7 +49,7 @@
             </syncfusion:SfCartesianChart>
 
             <!-- Additional Details Here -->
-            <Label Text="This graph shows the annual performance trends over the years.400 acres of sugar cane farm is available for investment. Last year this farm gave 120% output." 
+            <Label Text="This graph shows the yield (in tons) from farm. 400 acres of sugar cane farm is available for investment." 
                    FontSize="14"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"

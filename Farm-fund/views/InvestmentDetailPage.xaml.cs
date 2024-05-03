@@ -11,10 +11,10 @@ public partial class InvestmentDetailPage : ContentPage
 		InitializeComponent();
         InvestmentChartData = new ObservableCollection<InvestmentGraphModel>
         {
-            new InvestmentGraphModel { Month = new DateTime(2021, 1, 1), Value = 100 },
-            new InvestmentGraphModel { Month = new DateTime(2021, 2, 1), Value = 150 },
-            new InvestmentGraphModel { Month = new DateTime(2021, 3, 1), Value = 130 },
-            new InvestmentGraphModel { Month = new DateTime(2021, 4, 1), Value = 170 },
+            new InvestmentGraphModel { Month = new DateTime(2024, 1, 1), Value = 5 },
+            new InvestmentGraphModel { Month = new DateTime(2024, 2, 1), Value = 8 },
+            new InvestmentGraphModel { Month = new DateTime(2024, 3, 1), Value = 15 },
+            new InvestmentGraphModel { Month = new DateTime(2024, 4, 1), Value = 25 },            
         };
         this.BindingContext = this;
     }
