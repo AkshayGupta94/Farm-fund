@@ -34,9 +34,9 @@
         </Tab>
 
         <!-- Market Tab -->
-        <Tab Title="Market" Icon="market.png">
+        <Tab Title="Market" Icon="graph.png">
             <ShellContent Title="Market"
-                      Icon="market.png">
+                      Icon="graph.png">
                 <views:MarketPage />
             </ShellContent>
             <ShellContent Title="Ask me Questions!"

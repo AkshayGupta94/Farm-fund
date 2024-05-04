@@ -31,6 +31,13 @@ namespace Farm_fund.ViewModels
                 Details = "The farm yield is on track with our projections",
                 ImageUrl = "https://t3.ftcdn.net/jpg/06/78/40/56/360_F_678405631_4HnZqPCkL0C7g7thhp3GMJALIwAMmVMi.jpg"
             });
+            _investmentData.Add(new InvestmentModel()
+            {
+                Name = "Happy Farms Pennsylvania",
+                Cost = "$50,000",
+                Details = "Farm got affected from pest last season, which reduced the yield by 30%.",
+                ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
+            });
         }
 
         public ObservableCollection<InvestmentModel> InvestmentData

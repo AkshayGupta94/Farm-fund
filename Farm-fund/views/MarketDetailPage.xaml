@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Farm_fund.views.MarketDetailPage"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
+             xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
              xmlns:local="clr-namespace:Farm_fund.views"
              Title="Smith Family Farm"
              BackgroundColor="#F5F5F5">
-    
+
     <ScrollView>
         <StackLayout Padding="20" Spacing="20">
             <!-- Large Image Placeholder -->
@@ -21,39 +23,71 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Start"
                    TextColor="#212121"/>
+            
+            <cards:SfCardView BorderColor="#D3D3D3" CornerRadius="10" Margin="10">
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-            <!-- Description --><!--
-            <Label Text="Sugar Cane farm available for investment" 
-                   FontSize="16"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Start"
-                   TextColor="#757575"/>-->
+                    <!-- Icon or image representing shares -->
+                    <Image Source="shares.png" HeightRequest="60" WidthRequest="60" Grid.RowSpan="2"/>
 
-            <!-- Syncfusion Chart -->
-            <syncfusion:SfCartesianChart>
-                <syncfusion:SfCartesianChart.XAxes>
-                    <syncfusion:DateTimeAxis IntervalType="Years" Interval="1"/>
-                </syncfusion:SfCartesianChart.XAxes>
+                    <!-- Number of Shares -->
+                    <Label Text="Shares Available:" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="352" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"/>
 
-                <syncfusion:SfCartesianChart.YAxes>
-                    <syncfusion:NumericalAxis />
-                </syncfusion:SfCartesianChart.YAxes>
-                
-                <syncfusion:SfCartesianChart.Series>
-                    <syncfusion:LineSeries ItemsSource="{Binding ChartData}"
-                                            XBindingPath="Year"
-                                            YBindingPath="Value"
-                                            StrokeWidth="2" 
-                                           Fill="#6200EE"/>
-                </syncfusion:SfCartesianChart.Series>
-            </syncfusion:SfCartesianChart>
+                    <!-- Price Per Share -->
+                    <Label Text="Price per Share:" FontAttributes="Bold" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="$10" Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
+                </Grid>
+            </cards:SfCardView>
+            <gauge:SfRadialGauge Background="#F5F5F5" Margin="0">
+                <gauge:SfRadialGauge.Axes>
+                    <gauge:RadialAxis Interval="10"
+                          StartAngle="0"
+                          EndAngle="360"
+                          ShowTicks="False"
+                          ShowLabels="False">
+                        <gauge:RadialAxis.AxisLineStyle>
+                            <gauge:RadialLineStyle Thickness="30"/>
+                        </gauge:RadialAxis.AxisLineStyle>
+                        <gauge:RadialAxis.Pointers>
+                            <gauge:RangePointer Value="73"
+                                    PointerWidth="30"
+                                    EnableAnimation="True"
+                                    Fill="#7cb55a"
+                                    CornerStyle="BothCurve" />
+                        </gauge:RadialAxis.Pointers>
+
+                        <gauge:RadialAxis.Annotations>
+                            <gauge:GaugeAnnotation>
+                                <gauge:GaugeAnnotation.Content>
+                                    <VerticalStackLayout>
+                                        <Label Text="73% Subscribed"
+                                       FontSize="22"
+                                           TextColor="Black"
+                                       FontAttributes="Bold" />
+                                    </VerticalStackLayout>
+                                </gauge:GaugeAnnotation.Content>
+                            </gauge:GaugeAnnotation>
+                        </gauge:RadialAxis.Annotations>
+
+                    </gauge:RadialAxis>
+                </gauge:SfRadialGauge.Axes>
+            </gauge:SfRadialGauge>
 
             <!-- Additional Details Here -->
-            <Label Text="This graph shows the yield (in tons) from farm. 400 acres of sugar cane farm is available for investment." 
+            <Label Text="Spanning 400 acres, this sugar cane farm presents a lucrative investment opportunity in a thriving agricultural sector. Ideal for investors looking to capitalize on sustainable crop production and long-term growth." 
                    FontSize="14"
                    HorizontalOptions="Center"
                    VerticalOptions="Start"
-                   TextColor="#616161"/>
+                   TextColor="#616161" Padding="0" Margin="0"/>
 
             <!-- Action Button -->
             <Button Text="Start Investing" 
@@ -61,7 +95,6 @@
                     TextColor="White"
                     CornerRadius="20"
                     FontAttributes="Bold"
-                    Margin="10"
                     HeightRequest="50"
                     HorizontalOptions="FillAndExpand" />
         </StackLayout>

@@ -25,12 +25,6 @@ namespace Farm_fund.ViewModels
         {
             _farmData.Add(new FarmDataModel()
             {
-                Name = "Happy Farms Pennsylvania",
-                ImageUrl = "https://thumbs.dreamstime.com/b/country-farm-landscape-25598352.jpg"
-            });
-
-            _farmData.Add(new FarmDataModel()
-            {
                 Name = "Grow Farms Iowa",
                 ImageUrl = "https://www.libertyhillfarm.com/wp-content/uploads/2021/06/lhf-homepage-002.jpg"
             });
