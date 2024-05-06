@@ -1,4 +1,5 @@
-﻿using Syncfusion.Maui.Chat;
+﻿using Newtonsoft.Json.Linq;
+using Syncfusion.Maui.Chat;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +12,10 @@ namespace Farm_fund.ViewModels
 {
     public class MarketChatViewModel
     {
+        int count = 0;
         public MarketChatViewModel()
         {
-            _currentUser = new Author() { Name = "Margaret" };
+            _currentUser = new Author() { Name = "Srishti" };
             _messages = new ObservableCollection<object>();
             GenerateMessages();
         }
@@ -52,13 +54,68 @@ namespace Farm_fund.ViewModels
 
         }
 
-        public void HandleSendMessage(object sender, Syncfusion.Maui.Chat.SendMessageEventArgs e)
+        public async void HandleSendMessage(object sender, Syncfusion.Maui.Chat.SendMessageEventArgs e)
         {
-            this._messages.Add(new TextMessage()
+            HttpClient httpClient = new HttpClient();
+            httpClient.Timeout = TimeSpan.FromSeconds(100);
+            //this._messages.Add(new TextMessage()
+            //{
+            //    Author = CurrentUser,
+            //    Text = e.Message?.Text,
+            //});
+            if (count == 0)
             {
-                Author = CurrentUser,
-                Text = e.Message?.Text,
-            });
+
+                string reply = await httpClient.GetStringAsync(@"https://farm-python.azurewebsites.net/api/marketChat1?clientId=-Y9czaDvd7R4HY-Am_rUSrWZwh-7NmCQH9GSMWT16_wvAzFuz86wtQ==");
+                JObject jsonResponse = JObject.Parse(reply);
+
+                // Access the message field (string)
+                string message = jsonResponse["message"].ToString();
+
+                // Access the image field (list of strings)
+                JArray imagesArray = (JArray)jsonResponse["images"];
+                string[] images = imagesArray.ToObject<string[]>();
+                this._messages.Add(new TextMessage()
+                {
+                    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                    Text = message,
+                });
+                foreach (var img in images)
+                {
+                    this._messages.Add(new ImageMessage()
+                    {
+                        Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                        Source = img
+                    });
+                }
+                count++;
+            }
+            else if (count == 1)
+            {
+                string reply = await httpClient.GetStringAsync(@"https://farm-python.azurewebsites.net/api/marketChat2?clientId=ymtoOlGYwSQDNek_r_5QTt0y0wguWTut1gWIN4ntb7RNAzFuQqCe6w==");
+                JObject jsonResponse = JObject.Parse(reply);
+
+                // Access the message field (string)
+                string message = jsonResponse["message"].ToString();
+
+                // Access the image field (list of strings)
+                JArray imagesArray = (JArray)jsonResponse["images"];
+                string[] images = imagesArray.ToObject<string[]>();
+                this._messages.Add(new TextMessage()
+                {
+                    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                    Text = message,
+                });
+                foreach (var img in images)
+                {
+                    this._messages.Add(new ImageMessage()
+                    {
+                        Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                        Source = img
+                    });
+                }
+                count++;
+            }
         }
 
 
@@ -71,22 +128,22 @@ namespace Farm_fund.ViewModels
                 Text = "Hello, I am Field Mate, how can I help you today?",
             });
 
-            this._messages.Add(new TextMessage()
-            {
-                Author = CurrentUser,
-                Text = "Should i invest in wheat farm?",
-            });
+            //this._messages.Add(new TextMessage()
+            //{
+            //    Author = CurrentUser,
+            //    Text = "Should i invest in wheat farm?",
+            //});
 
-            this._messages.Add(new TextMessage()
-            {
-                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
-                Text = "The wheat yield is expected to be above average this year. You should invest it. This is a yield from last year",
-            });
-            this._messages.Add(new ImageMessage()
-            {
-                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
-                Source = "farm.jpg",
-            });
+            //this._messages.Add(new TextMessage()
+            //{
+            //    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+            //    Text = "The wheat yield is expected to be above average this year. You should invest it. This is a yield from last year",
+            //});
+            //this._messages.Add(new ImageMessage()
+            //{
+            //    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+            //    Source = "farm.jpg",
+            //});
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using Syncfusion.Maui.Chat;
+﻿using Newtonsoft.Json.Linq;
+using Syncfusion.Maui.Chat;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +12,10 @@ namespace Farm_fund.ViewModels
 {
     public class InvestmentChatPageViewModel : INotifyPropertyChanged
     {
+        int count = 0;
         public InvestmentChatPageViewModel()
         {
-            _currentUser = new Author() { Name = "Margaret"};
+            _currentUser = new Author() { Name = "Srishti" };
             _messages = new ObservableCollection<object>();
             GenerateMessages();
         }
@@ -52,13 +54,69 @@ namespace Farm_fund.ViewModels
 
         }
 
-        public void HandleSendMessage(object sender, Syncfusion.Maui.Chat.SendMessageEventArgs e)
+        public async void HandleSendMessage(object sender, Syncfusion.Maui.Chat.SendMessageEventArgs e)
         {
-            this._messages.Add(new TextMessage()
+            HttpClient httpClient = new HttpClient();
+            httpClient.Timeout = TimeSpan.FromSeconds(100);
+            //this._messages.Add(new TextMessage()
+            //{
+            //    Author = CurrentUser,
+            //    Text = e.Message?.Text,
+            //});
+            if (count == 0)
             {
-                Author = CurrentUser,
-                Text = e.Message?.Text,
-            });
+
+                string reply = await httpClient.GetStringAsync(@"https://farm-python.azurewebsites.net/api/investorChat1?clientId=WuZOugUfwpCQvC-BlrUXC3rTenWthRi1Zn8Ac0Jx1LFKAzFuV3Sjhg==");
+                JObject jsonResponse = JObject.Parse(reply);
+
+                // Access the message field (string)
+                string message = jsonResponse["message"].ToString();
+
+                // Access the image field (list of strings)
+                JArray imagesArray = (JArray)jsonResponse["images"];
+                string[] images = imagesArray.ToObject<string[]>();
+                this._messages.Add(new TextMessage()
+                {
+                    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                    Text = message,
+                });
+                foreach (var img in images)
+                {
+                    this._messages.Add(new ImageMessage()
+                    {
+                        Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                        Source = img
+                    });
+                }
+                count++;
+            }
+            else if (count == 1)
+            {
+                string reply = await httpClient.GetStringAsync(@"https://farm-python.azurewebsites.net/api/investorChat2?clientId=YKWbieBSdj1_r76VSTikob-aPfWxHXsKKULCMpgBova2AzFugRWl3w==");
+                JObject jsonResponse = JObject.Parse(reply);
+
+                // Access the message field (string)
+                string message = jsonResponse["message"].ToString();
+
+                // Access the image field (list of strings)
+                JArray imagesArray = (JArray)jsonResponse["images"];
+                string[] images = imagesArray.ToObject<string[]>();
+                this._messages.Add(new TextMessage()
+                {
+                    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                    Text = message,
+                });
+                foreach (var img in images)
+                {
+                    this._messages.Add(new ImageMessage()
+                    {
+                        Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+                        Source = img
+                    });
+                }
+                count++;
+            }
+           
         }
 
 
@@ -71,22 +129,22 @@ namespace Farm_fund.ViewModels
                 Text = "Hello, I am Field Mate, how can I help you today?",
             });
 
-            this._messages.Add(new TextMessage()
-            {
-                Author = CurrentUser,
-                Text = "How is my investment in farm 1 going?",
-            });
+            //this._messages.Add(new TextMessage()
+            //{
+            //    Author = CurrentUser,
+            //    Text = "How is my investment in farm 1 going?",
+            //});
 
-            this._messages.Add(new TextMessage()
-            {
-                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
-                Text = "The farm 1 yeild is very impressive, you can expect good returns in 2 months. Here is the most recent picture of your farm",
-            });
-            this._messages.Add(new ImageMessage()
-            {
-                Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
-                Source = "farm.jpg",
-            });
+            //this._messages.Add(new TextMessage()
+            //{
+            //    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+            //    Text = "The farm 1 yeild is very impressive, you can expect good returns in 2 months. Here is the most recent picture of your farm",
+            //});
+            //this._messages.Add(new ImageMessage()
+            //{
+            //    Author = new Author() { Name = "Field Mate", Avatar = "farmfund_bot.png" },
+            //    Source = "farm.jpg",
+            //});
         }
     }
 
